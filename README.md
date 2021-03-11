@@ -1,10 +1,8 @@
 # BUPT-DigitalCircuitExperiment-Project
-北邮信通院19届数电实验课程大作业
-北邮数电实验课程大作业，请勿直接复制粘贴
+北邮信通院19届数电实验课程大作业，请勿直接复制粘贴
 ## 题目：电子琴
-Experiment后缀0→3是代码更新版本，最终版本是Experiment3
-
-有附带testbench文件，可以进行仿真
+Experiment后缀0→3是代码更新版本，最终版本是Experiment3<br>
+有附带testbench文件，可以进行仿真（Only Experiment3）
 ## 实现功能
  - LED点阵点亮，并随音节变化
  - LED点阵三种颜色对应高中低音节（详见要求文档）
