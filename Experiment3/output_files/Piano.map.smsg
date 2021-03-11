@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at Piano.v(345): always construct contains both blocking and non-blocking assignments File: D:/QuartusProjects/Experiment3/Piano.v Line: 345
+Warning (10268): Verilog HDL information at Piano.v(446): always construct contains both blocking and non-blocking assignments File: D:/QuartusProjects/Experiment3/Piano.v Line: 446

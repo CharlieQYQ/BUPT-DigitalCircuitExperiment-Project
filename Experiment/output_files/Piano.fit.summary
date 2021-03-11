@@ -1,0 +1,18 @@
+Fitter Status : Successful - Sun Nov 15 23:44:47 2020
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : Piano
+Top-level Entity Name : ARKLED
+Family : MAX 10
+Device : 10M02SCM153C8G
+Timing Models : Final
+Total logic elements : 16 / 2,304 ( < 1 % )
+    Total combinational functions : 16 / 2,304 ( < 1 % )
+    Dedicated logic registers : 3 / 2,304 ( < 1 % )
+Total registers : 3
+Total pins : 25 / 112 ( 22 % )
+Total virtual pins : 0
+Total memory bits : 0 / 110,592 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 32 ( 0 % )
+Total PLLs : 0 / 1 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0

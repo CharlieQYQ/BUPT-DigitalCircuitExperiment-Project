@@ -1,0 +1,61 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/QuartusProjects/Experiment3/simulation/modelsim
+vPiano
+Z1 !s110 1608010186
+!i10b 1
+!s100 OE`7_>bmgV7mkYUAlFC2z0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I8FWKRZURU60z^N<5oKkC62
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1608007690
+8Piano.vo
+FPiano.vo
+!i122 0
+L0 32 10281
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1608010186.000000
+!s107 Piano.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|Piano.vo|
+!i113 1
+Z6 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+.
+Z7 tCvgOpt 0
+n@piano
+vPianoTest
+R1
+!i10b 1
+!s100 GYAC?CNiA6mgDc[DEK8JQ0
+R2
+IY4MjlH`lc52aKSoKOWdHF1
+R3
+R0
+w1608010162
+8D:/QuartusProjects/Experiment3/Testbench_Piano.v
+FD:/QuartusProjects/Experiment3/Testbench_Piano.v
+!i122 1
+L0 5 127
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/QuartusProjects/Experiment3/Testbench_Piano.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/QuartusProjects/Experiment3|D:/QuartusProjects/Experiment3/Testbench_Piano.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+D:/QuartusProjects/Experiment3
+R7
+n@piano@test

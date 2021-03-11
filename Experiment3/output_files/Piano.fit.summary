@@ -1,0 +1,11 @@
+Fitter Status : Successful - Tue Dec 15 13:35:09 2020
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : Piano
+Top-level Entity Name : Piano
+Family : MAX II
+Device : EPM1270T144C5
+Timing Models : Final
+Total logic elements : 255 / 1,270 ( 20 % )
+Total pins : 52 / 116 ( 45 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

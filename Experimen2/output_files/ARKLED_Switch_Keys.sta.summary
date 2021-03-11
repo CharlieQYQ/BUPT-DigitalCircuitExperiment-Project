@@ -1,0 +1,29 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'CLK'
+Slack : -17.418
+TNS   : -221.345
+
+Type  : Setup 'AutoMode:m1|FullBeats'
+Slack : -4.193
+TNS   : -11.645
+
+Type  : Hold 'AutoMode:m1|FullBeats'
+Slack : -2.505
+TNS   : -6.987
+
+Type  : Hold 'CLK'
+Slack : 1.732
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'CLK'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'AutoMode:m1|FullBeats'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

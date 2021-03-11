@@ -1,0 +1,634 @@
+Timing Analyzer report for ARKLED_Switch_Keys
+Sun Nov 22 22:51:05 2020
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'CLK'
+ 12. Setup: 'AutoMode:m1|FullBeats'
+ 13. Hold: 'AutoMode:m1|FullBeats'
+ 14. Hold: 'CLK'
+ 15. Setup Transfers
+ 16. Hold Transfers
+ 17. Report TCCS
+ 18. Report RSKM
+ 19. Unconstrained Paths Summary
+ 20. Clock Status Summary
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. Unconstrained Input Ports
+ 24. Unconstrained Output Ports
+ 25. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; ARKLED_Switch_Keys                                  ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM1270T144C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                       ;
++-----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------+
+; Clock Name            ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                   ;
++-----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------+
+; AutoMode:m1|FullBeats ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { AutoMode:m1|FullBeats } ;
+; CLK                   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK }                   ;
++-----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------+
+
+
++-------------------------------------------------------------+
+; Fmax Summary                                                ;
++------------+-----------------+-----------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name            ; Note ;
++------------+-----------------+-----------------------+------+
+; 124.83 MHz ; 124.83 MHz      ; CLK                   ;      ;
+; 192.57 MHz ; 192.57 MHz      ; AutoMode:m1|FullBeats ;      ;
++------------+-----------------+-----------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------------+
+; Setup Summary                                   ;
++-----------------------+---------+---------------+
+; Clock                 ; Slack   ; End Point TNS ;
++-----------------------+---------+---------------+
+; CLK                   ; -17.418 ; -221.345      ;
+; AutoMode:m1|FullBeats ; -4.193  ; -11.645       ;
++-----------------------+---------+---------------+
+
+
++------------------------------------------------+
+; Hold Summary                                   ;
++-----------------------+--------+---------------+
+; Clock                 ; Slack  ; End Point TNS ;
++-----------------------+--------+---------------+
+; AutoMode:m1|FullBeats ; -2.505 ; -6.987        ;
+; CLK                   ; 1.732  ; 0.000         ;
++-----------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++------------------------------------------------+
+; Minimum Pulse Width Summary                    ;
++-----------------------+--------+---------------+
+; Clock                 ; Slack  ; End Point TNS ;
++-----------------------+--------+---------------+
+; CLK                   ; -2.289 ; -2.289        ;
+; AutoMode:m1|FullBeats ; 0.500  ; 0.000         ;
++-----------------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'CLK'                                                                                                                                 ;
++---------+-----------------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                   ; To Node               ; Launch Clock          ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-----------------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; -17.418 ; AutoMode:m1|BeatsCounter[1] ; Beeper:m4|Counter[2]  ; AutoMode:m1|FullBeats ; CLK         ; 0.500        ; -2.763     ; 14.822     ;
+; -17.417 ; AutoMode:m1|BeatsCounter[1] ; Beeper:m4|Beep        ; AutoMode:m1|FullBeats ; CLK         ; 0.500        ; -2.763     ; 14.821     ;
+; -17.416 ; AutoMode:m1|BeatsCounter[1] ; Beeper:m4|Counter[0]  ; AutoMode:m1|FullBeats ; CLK         ; 0.500        ; -2.763     ; 14.820     ;
+; -17.408 ; AutoMode:m1|BeatsCounter[1] ; Beeper:m4|Counter[1]  ; AutoMode:m1|FullBeats ; CLK         ; 0.500        ; -2.763     ; 14.812     ;
+; -17.376 ; AutoMode:m1|BeatsCounter[2] ; Beeper:m4|Counter[2]  ; AutoMode:m1|FullBeats ; CLK         ; 0.500        ; -2.757     ; 14.786     ;
+; -17.375 ; AutoMode:m1|BeatsCounter[2] ; Beeper:m4|Beep        ; AutoMode:m1|FullBeats ; CLK         ; 0.500        ; -2.757     ; 14.785     ;
+; -17.374 ; AutoMode:m1|BeatsCounter[2] ; Beeper:m4|Counter[0]  ; AutoMode:m1|FullBeats ; CLK         ; 0.500        ; -2.757     ; 14.784     ;
+; -17.366 ; AutoMode:m1|BeatsCounter[2] ; Beeper:m4|Counter[1]  ; AutoMode:m1|FullBeats ; CLK         ; 0.500        ; -2.757     ; 14.776     ;
+; -17.071 ; AutoMode:m1|BeatsCounter[3] ; Beeper:m4|Counter[2]  ; AutoMode:m1|FullBeats ; CLK         ; 0.500        ; -2.757     ; 14.481     ;
+; -17.070 ; AutoMode:m1|BeatsCounter[3] ; Beeper:m4|Beep        ; AutoMode:m1|FullBeats ; CLK         ; 0.500        ; -2.757     ; 14.480     ;
+; -17.069 ; AutoMode:m1|BeatsCounter[3] ; Beeper:m4|Counter[0]  ; AutoMode:m1|FullBeats ; CLK         ; 0.500        ; -2.757     ; 14.479     ;
+; -17.061 ; AutoMode:m1|BeatsCounter[3] ; Beeper:m4|Counter[1]  ; AutoMode:m1|FullBeats ; CLK         ; 0.500        ; -2.757     ; 14.471     ;
+; -16.928 ; AutoMode:m1|BeatsCounter[1] ; Beeper:m4|Counter[3]  ; AutoMode:m1|FullBeats ; CLK         ; 0.500        ; -2.763     ; 14.332     ;
+; -16.886 ; AutoMode:m1|BeatsCounter[2] ; Beeper:m4|Counter[3]  ; AutoMode:m1|FullBeats ; CLK         ; 0.500        ; -2.757     ; 14.296     ;
+; -16.581 ; AutoMode:m1|BeatsCounter[3] ; Beeper:m4|Counter[3]  ; AutoMode:m1|FullBeats ; CLK         ; 0.500        ; -2.757     ; 13.991     ;
+; -7.011  ; Beeper:m4|Counter[3]        ; Beeper:m4|Counter[2]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.678      ;
+; -7.010  ; Beeper:m4|Counter[3]        ; Beeper:m4|Beep        ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.677      ;
+; -7.009  ; Beeper:m4|Counter[3]        ; Beeper:m4|Counter[0]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.676      ;
+; -7.001  ; Beeper:m4|Counter[3]        ; Beeper:m4|Counter[1]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.668      ;
+; -6.757  ; AutoMode:m1|Timer[6]        ; AutoMode:m1|Timer[16] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.424      ;
+; -6.720  ; Beeper:m4|Counter[0]        ; Beeper:m4|Counter[2]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.387      ;
+; -6.719  ; Beeper:m4|Counter[0]        ; Beeper:m4|Beep        ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.386      ;
+; -6.718  ; Beeper:m4|Counter[0]        ; Beeper:m4|Counter[0]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.385      ;
+; -6.710  ; Beeper:m4|Counter[0]        ; Beeper:m4|Counter[1]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.377      ;
+; -6.651  ; AutoMode:m1|Timer[0]        ; AutoMode:m1|Timer[13] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.318      ;
+; -6.639  ; AutoMode:m1|Timer[1]        ; AutoMode:m1|Timer[13] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.306      ;
+; -6.636  ; AutoMode:m1|Timer[0]        ; AutoMode:m1|Timer[18] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.303      ;
+; -6.624  ; AutoMode:m1|Timer[1]        ; AutoMode:m1|Timer[18] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.291      ;
+; -6.612  ; AutoMode:m1|Timer[6]        ; AutoMode:m1|FullBeats ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.279      ;
+; -6.576  ; AutoMode:m1|Timer[0]        ; AutoMode:m1|Timer[16] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.243      ;
+; -6.564  ; AutoMode:m1|Timer[1]        ; AutoMode:m1|Timer[16] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.231      ;
+; -6.547  ; AutoMode:m1|Timer[6]        ; AutoMode:m1|Timer[14] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.214      ;
+; -6.546  ; AutoMode:m1|Timer[6]        ; AutoMode:m1|Timer[17] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.213      ;
+; -6.545  ; AutoMode:m1|Timer[6]        ; AutoMode:m1|Timer[12] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.212      ;
+; -6.542  ; AutoMode:m1|Timer[6]        ; AutoMode:m1|Timer[15] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.209      ;
+; -6.521  ; Beeper:m4|Counter[3]        ; Beeper:m4|Counter[3]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.188      ;
+; -6.417  ; AutoMode:m1|Timer[2]        ; AutoMode:m1|Timer[13] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.084      ;
+; -6.406  ; AutoMode:m1|Timer[5]        ; AutoMode:m1|Timer[13] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.073      ;
+; -6.402  ; AutoMode:m1|Timer[2]        ; AutoMode:m1|Timer[18] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.069      ;
+; -6.399  ; AutoMode:m1|Timer[0]        ; AutoMode:m1|Timer[7]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.066      ;
+; -6.391  ; AutoMode:m1|Timer[5]        ; AutoMode:m1|Timer[18] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.058      ;
+; -6.387  ; AutoMode:m1|Timer[1]        ; AutoMode:m1|Timer[7]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.054      ;
+; -6.354  ; AutoMode:m1|Timer[3]        ; AutoMode:m1|Timer[13] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.021      ;
+; -6.342  ; AutoMode:m1|Timer[2]        ; AutoMode:m1|Timer[16] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.009      ;
+; -6.339  ; AutoMode:m1|Timer[3]        ; AutoMode:m1|Timer[18] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 7.006      ;
+; -6.331  ; AutoMode:m1|Timer[5]        ; AutoMode:m1|Timer[16] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.998      ;
+; -6.321  ; AutoMode:m1|Timer[7]        ; AutoMode:m1|Timer[13] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.988      ;
+; -6.315  ; AutoMode:m1|Timer[4]        ; AutoMode:m1|Timer[13] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.982      ;
+; -6.306  ; AutoMode:m1|Timer[7]        ; AutoMode:m1|Timer[18] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.973      ;
+; -6.300  ; AutoMode:m1|Timer[4]        ; AutoMode:m1|Timer[18] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.967      ;
+; -6.293  ; AutoMode:m1|Timer[0]        ; AutoMode:m1|Timer[10] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.960      ;
+; -6.292  ; AutoMode:m1|Timer[0]        ; AutoMode:m1|Timer[15] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.959      ;
+; -6.288  ; AutoMode:m1|Timer[0]        ; AutoMode:m1|Timer[12] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.955      ;
+; -6.281  ; AutoMode:m1|Timer[0]        ; AutoMode:m1|Timer[14] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.948      ;
+; -6.281  ; AutoMode:m1|Timer[1]        ; AutoMode:m1|Timer[10] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.948      ;
+; -6.280  ; AutoMode:m1|Timer[1]        ; AutoMode:m1|Timer[15] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.947      ;
+; -6.279  ; AutoMode:m1|Timer[3]        ; AutoMode:m1|Timer[16] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.946      ;
+; -6.276  ; AutoMode:m1|Timer[1]        ; AutoMode:m1|Timer[12] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.943      ;
+; -6.271  ; AutoMode:m1|Timer[0]        ; AutoMode:m1|Timer[17] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.938      ;
+; -6.269  ; AutoMode:m1|Timer[1]        ; AutoMode:m1|Timer[14] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.936      ;
+; -6.259  ; AutoMode:m1|Timer[1]        ; AutoMode:m1|Timer[17] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.926      ;
+; -6.246  ; AutoMode:m1|Timer[7]        ; AutoMode:m1|Timer[16] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.913      ;
+; -6.241  ; AutoMode:m1|Timer[6]        ; AutoMode:m1|Timer[7]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.908      ;
+; -6.240  ; AutoMode:m1|Timer[4]        ; AutoMode:m1|Timer[16] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.907      ;
+; -6.238  ; AutoMode:m1|Timer[6]        ; AutoMode:m1|Timer[4]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.905      ;
+; -6.237  ; AutoMode:m1|Timer[6]        ; AutoMode:m1|Timer[0]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.904      ;
+; -6.230  ; Beeper:m4|Counter[0]        ; Beeper:m4|Counter[3]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.897      ;
+; -6.176  ; AutoMode:m1|Timer[1]        ; AutoMode:m1|FullBeats ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.843      ;
+; -6.176  ; AutoMode:m1|Timer[8]        ; AutoMode:m1|Timer[13] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.843      ;
+; -6.165  ; AutoMode:m1|Timer[2]        ; AutoMode:m1|Timer[7]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.832      ;
+; -6.161  ; AutoMode:m1|Timer[8]        ; AutoMode:m1|Timer[18] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.828      ;
+; -6.149  ; AutoMode:m1|Timer[0]        ; AutoMode:m1|Timer[5]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.816      ;
+; -6.137  ; AutoMode:m1|Timer[1]        ; AutoMode:m1|Timer[5]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.804      ;
+; -6.128  ; AutoMode:m1|Timer[11]       ; AutoMode:m1|Timer[16] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.795      ;
+; -6.103  ; AutoMode:m1|Timer[0]        ; AutoMode:m1|Timer[8]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.770      ;
+; -6.102  ; AutoMode:m1|Timer[3]        ; AutoMode:m1|Timer[7]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.769      ;
+; -6.101  ; AutoMode:m1|Timer[8]        ; AutoMode:m1|Timer[16] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.768      ;
+; -6.091  ; AutoMode:m1|Timer[1]        ; AutoMode:m1|Timer[8]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.758      ;
+; -6.063  ; AutoMode:m1|Timer[4]        ; AutoMode:m1|Timer[7]  ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.730      ;
+; -6.059  ; AutoMode:m1|Timer[2]        ; AutoMode:m1|Timer[10] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.726      ;
+; -6.058  ; AutoMode:m1|Timer[2]        ; AutoMode:m1|Timer[15] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.725      ;
+; -6.054  ; AutoMode:m1|Timer[2]        ; AutoMode:m1|Timer[12] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.721      ;
+; -6.048  ; AutoMode:m1|Timer[5]        ; AutoMode:m1|Timer[10] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.715      ;
+; -6.047  ; AutoMode:m1|Timer[5]        ; AutoMode:m1|Timer[15] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.714      ;
+; -6.047  ; AutoMode:m1|Timer[2]        ; AutoMode:m1|Timer[14] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.714      ;
+; -6.043  ; AutoMode:m1|Timer[5]        ; AutoMode:m1|Timer[12] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.710      ;
+; -6.042  ; AutoMode:m1|Timer[0]        ; AutoMode:m1|Timer[11] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.709      ;
+; -6.037  ; AutoMode:m1|Timer[2]        ; AutoMode:m1|Timer[17] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.704      ;
+; -6.036  ; AutoMode:m1|Timer[5]        ; AutoMode:m1|Timer[14] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.703      ;
+; -6.030  ; AutoMode:m1|Timer[1]        ; AutoMode:m1|Timer[11] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.697      ;
+; -6.026  ; AutoMode:m1|Timer[5]        ; AutoMode:m1|Timer[17] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.693      ;
+; -6.017  ; AutoMode:m1|Timer[0]        ; AutoMode:m1|Timer[19] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.684      ;
+; -6.005  ; AutoMode:m1|Timer[1]        ; AutoMode:m1|Timer[19] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.672      ;
+; -5.996  ; AutoMode:m1|Timer[3]        ; AutoMode:m1|Timer[10] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.663      ;
+; -5.995  ; AutoMode:m1|Timer[3]        ; AutoMode:m1|Timer[15] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.662      ;
+; -5.991  ; AutoMode:m1|Timer[3]        ; AutoMode:m1|Timer[12] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.658      ;
+; -5.984  ; AutoMode:m1|Timer[3]        ; AutoMode:m1|Timer[14] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.651      ;
+; -5.983  ; AutoMode:m1|Timer[11]       ; AutoMode:m1|FullBeats ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.650      ;
+; -5.974  ; AutoMode:m1|Timer[3]        ; AutoMode:m1|Timer[17] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.641      ;
+; -5.963  ; AutoMode:m1|Timer[7]        ; AutoMode:m1|Timer[10] ; CLK                   ; CLK         ; 1.000        ; 0.000      ; 6.630      ;
++---------+-----------------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'AutoMode:m1|FullBeats'                                                                                                                              ;
++--------+-----------------------------+-----------------------------+-----------------------+-----------------------+--------------+------------+------------+
+; Slack  ; From Node                   ; To Node                     ; Launch Clock          ; Latch Clock           ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------+-----------------------------+-----------------------+-----------------------+--------------+------------+------------+
+; -4.193 ; AutoMode:m1|BeatsCounter[2] ; AutoMode:m1|BeatsCounter[2] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 1.000        ; 0.000      ; 3.040      ;
+; -3.925 ; AutoMode:m1|BeatsCounter[1] ; AutoMode:m1|BeatsCounter[2] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 1.000        ; -0.006     ; 2.766      ;
+; -3.810 ; AutoMode:m1|BeatsCounter[1] ; AutoMode:m1|BeatsCounter[1] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 1.000        ; 0.000      ; 2.760      ;
+; -3.642 ; AutoMode:m1|BeatsCounter[2] ; AutoMode:m1|BeatsCounter[3] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 1.000        ; 0.000      ; 2.612      ;
+; -3.518 ; AutoMode:m1|BeatsCounter[3] ; AutoMode:m1|BeatsCounter[3] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 1.000        ; 0.000      ; 2.488      ;
+; -3.360 ; AutoMode:m1|BeatsCounter[1] ; AutoMode:m1|BeatsCounter[3] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 1.000        ; -0.006     ; 2.324      ;
+; 0.496  ; AutoMode:m1|FullBeats       ; AutoMode:m1|BeatsCounter[2] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 0.500        ; 6.576      ; 4.803      ;
+; 0.783  ; AutoMode:m1|FullBeats       ; AutoMode:m1|BeatsCounter[1] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 0.500        ; 6.582      ; 4.625      ;
+; 0.975  ; AutoMode:m1|FullBeats       ; AutoMode:m1|BeatsCounter[3] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 0.500        ; 6.576      ; 4.447      ;
+; 0.996  ; AutoMode:m1|FullBeats       ; AutoMode:m1|BeatsCounter[2] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 1.000        ; 6.576      ; 4.803      ;
+; 1.283  ; AutoMode:m1|FullBeats       ; AutoMode:m1|BeatsCounter[1] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 1.000        ; 6.582      ; 4.625      ;
+; 1.475  ; AutoMode:m1|FullBeats       ; AutoMode:m1|BeatsCounter[3] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 1.000        ; 6.576      ; 4.447      ;
++--------+-----------------------------+-----------------------------+-----------------------+-----------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'AutoMode:m1|FullBeats'                                                                                                                               ;
++--------+-----------------------------+-----------------------------+-----------------------+-----------------------+--------------+------------+------------+
+; Slack  ; From Node                   ; To Node                     ; Launch Clock          ; Latch Clock           ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------+-----------------------------+-----------------------+-----------------------+--------------+------------+------------+
+; -2.505 ; AutoMode:m1|FullBeats       ; AutoMode:m1|BeatsCounter[3] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 0.000        ; 6.576      ; 4.447      ;
+; -2.333 ; AutoMode:m1|FullBeats       ; AutoMode:m1|BeatsCounter[1] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 0.000        ; 6.582      ; 4.625      ;
+; -2.149 ; AutoMode:m1|FullBeats       ; AutoMode:m1|BeatsCounter[2] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 0.000        ; 6.576      ; 4.803      ;
+; -2.005 ; AutoMode:m1|FullBeats       ; AutoMode:m1|BeatsCounter[3] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; -0.500       ; 6.576      ; 4.447      ;
+; -1.833 ; AutoMode:m1|FullBeats       ; AutoMode:m1|BeatsCounter[1] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; -0.500       ; 6.582      ; 4.625      ;
+; -1.649 ; AutoMode:m1|FullBeats       ; AutoMode:m1|BeatsCounter[2] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; -0.500       ; 6.576      ; 4.803      ;
+; 2.330  ; AutoMode:m1|BeatsCounter[1] ; AutoMode:m1|BeatsCounter[3] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 0.000        ; -0.006     ; 2.324      ;
+; 2.488  ; AutoMode:m1|BeatsCounter[3] ; AutoMode:m1|BeatsCounter[3] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 0.000        ; 0.000      ; 2.488      ;
+; 2.612  ; AutoMode:m1|BeatsCounter[2] ; AutoMode:m1|BeatsCounter[3] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 0.000        ; 0.000      ; 2.612      ;
+; 2.760  ; AutoMode:m1|BeatsCounter[1] ; AutoMode:m1|BeatsCounter[1] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 0.000        ; 0.000      ; 2.760      ;
+; 2.772  ; AutoMode:m1|BeatsCounter[1] ; AutoMode:m1|BeatsCounter[2] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 0.000        ; -0.006     ; 2.766      ;
+; 3.040  ; AutoMode:m1|BeatsCounter[2] ; AutoMode:m1|BeatsCounter[2] ; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 0.000        ; 0.000      ; 3.040      ;
++--------+-----------------------------+-----------------------------+-----------------------+-----------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLK'                                                                                                                         ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; 1.732 ; Mod8Counter:m2|Counter[1] ; Mod8Counter:m2|Counter[1] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.953      ;
+; 1.734 ; Mod8Counter:m2|Counter[1] ; Mod8Counter:m2|Counter[2] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.955      ;
+; 1.796 ; Mod8Counter:m2|Counter[0] ; Mod8Counter:m2|Counter[0] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.017      ;
+; 1.898 ; Mod8Counter:m2|Counter[2] ; Mod8Counter:m2|Counter[2] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.119      ;
+; 1.899 ; Beeper:m4|Beep            ; Beeper:m4|Beep            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.120      ;
+; 1.972 ; Beeper:m4|Counter[1]      ; Beeper:m4|Counter[1]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.193      ;
+; 1.978 ; Beeper:m4|Counter[1]      ; Beeper:m4|Counter[2]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.199      ;
+; 2.151 ; Beeper:m4|Counter[3]      ; Beeper:m4|Counter[3]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.372      ;
+; 2.292 ; Beeper:m4|Counter[2]      ; Beeper:m4|Counter[2]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.513      ;
+; 2.309 ; Beeper:m4|Counter[2]      ; Beeper:m4|Counter[3]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.530      ;
+; 2.311 ; Mod8Counter:m2|Counter[0] ; Mod8Counter:m2|Counter[1] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.532      ;
+; 2.386 ; Mod8Counter:m2|Counter[0] ; Mod8Counter:m2|Counter[2] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.607      ;
+; 3.306 ; Beeper:m4|Counter[0]      ; Beeper:m4|Counter[2]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.527      ;
+; 3.310 ; Beeper:m4|Counter[0]      ; Beeper:m4|Counter[0]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.531      ;
+; 3.314 ; Beeper:m4|Counter[0]      ; Beeper:m4|Counter[1]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.535      ;
+; 3.635 ; AutoMode:m1|Timer[11]     ; AutoMode:m1|Timer[11]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.856      ;
+; 3.650 ; AutoMode:m1|Timer[6]      ; AutoMode:m1|Timer[6]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.871      ;
+; 3.800 ; AutoMode:m1|Timer[19]     ; AutoMode:m1|Timer[19]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.021      ;
+; 3.810 ; AutoMode:m1|Timer[9]      ; AutoMode:m1|Timer[9]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.031      ;
+; 3.841 ; AutoMode:m1|Timer[3]      ; AutoMode:m1|Timer[0]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.062      ;
+; 3.842 ; AutoMode:m1|Timer[3]      ; AutoMode:m1|Timer[4]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.063      ;
+; 3.845 ; AutoMode:m1|Timer[3]      ; AutoMode:m1|Timer[7]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.066      ;
+; 3.900 ; AutoMode:m1|Timer[13]     ; AutoMode:m1|Timer[0]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.121      ;
+; 3.901 ; AutoMode:m1|Timer[13]     ; AutoMode:m1|Timer[4]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.122      ;
+; 3.904 ; AutoMode:m1|Timer[13]     ; AutoMode:m1|Timer[7]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.125      ;
+; 3.906 ; AutoMode:m1|Timer[14]     ; AutoMode:m1|Timer[14]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.127      ;
+; 3.908 ; AutoMode:m1|Timer[10]     ; AutoMode:m1|Timer[10]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.129      ;
+; 3.914 ; AutoMode:m1|Timer[15]     ; AutoMode:m1|Timer[15]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.135      ;
+; 3.922 ; Beeper:m4|Counter[2]      ; Beeper:m4|Counter[1]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.143      ;
+; 3.930 ; Beeper:m4|Counter[2]      ; Beeper:m4|Counter[0]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.151      ;
+; 3.931 ; Beeper:m4|Counter[2]      ; Beeper:m4|Beep            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.152      ;
+; 4.037 ; AutoMode:m1|Timer[17]     ; AutoMode:m1|Timer[17]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.258      ;
+; 4.045 ; AutoMode:m1|Timer[8]      ; AutoMode:m1|Timer[0]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.266      ;
+; 4.046 ; AutoMode:m1|Timer[8]      ; AutoMode:m1|Timer[4]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.267      ;
+; 4.049 ; AutoMode:m1|Timer[8]      ; AutoMode:m1|Timer[7]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.270      ;
+; 4.059 ; AutoMode:m1|Timer[12]     ; AutoMode:m1|Timer[12]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.280      ;
+; 4.146 ; AutoMode:m1|Timer[3]      ; AutoMode:m1|Timer[15]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.367      ;
+; 4.149 ; AutoMode:m1|Timer[3]      ; AutoMode:m1|Timer[12]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.370      ;
+; 4.150 ; AutoMode:m1|Timer[3]      ; AutoMode:m1|Timer[17]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.371      ;
+; 4.151 ; AutoMode:m1|Timer[3]      ; AutoMode:m1|Timer[14]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.372      ;
+; 4.205 ; AutoMode:m1|Timer[13]     ; AutoMode:m1|Timer[15]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.426      ;
+; 4.208 ; AutoMode:m1|Timer[13]     ; AutoMode:m1|Timer[12]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.429      ;
+; 4.209 ; AutoMode:m1|Timer[13]     ; AutoMode:m1|Timer[17]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.430      ;
+; 4.210 ; AutoMode:m1|Timer[13]     ; AutoMode:m1|Timer[14]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.431      ;
+; 4.216 ; AutoMode:m1|Timer[3]      ; AutoMode:m1|FullBeats     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.437      ;
+; 4.262 ; AutoMode:m1|Timer[13]     ; AutoMode:m1|Timer[13]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.483      ;
+; 4.275 ; AutoMode:m1|Timer[13]     ; AutoMode:m1|FullBeats     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.496      ;
+; 4.346 ; Beeper:m4|Counter[1]      ; Beeper:m4|Counter[3]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.567      ;
+; 4.350 ; AutoMode:m1|Timer[8]      ; AutoMode:m1|Timer[15]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.571      ;
+; 4.353 ; AutoMode:m1|Timer[8]      ; AutoMode:m1|Timer[12]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.574      ;
+; 4.354 ; AutoMode:m1|Timer[8]      ; AutoMode:m1|Timer[17]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.575      ;
+; 4.355 ; AutoMode:m1|Timer[8]      ; AutoMode:m1|Timer[14]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.576      ;
+; 4.361 ; AutoMode:m1|Timer[3]      ; AutoMode:m1|Timer[16]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.582      ;
+; 4.374 ; AutoMode:m1|Timer[16]     ; AutoMode:m1|Timer[16]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.595      ;
+; 4.402 ; AutoMode:m1|Timer[15]     ; AutoMode:m1|Timer[0]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.623      ;
+; 4.403 ; AutoMode:m1|Timer[15]     ; AutoMode:m1|Timer[4]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.624      ;
+; 4.406 ; AutoMode:m1|Timer[15]     ; AutoMode:m1|Timer[7]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.627      ;
+; 4.420 ; AutoMode:m1|Timer[18]     ; AutoMode:m1|Timer[18]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.641      ;
+; 4.420 ; AutoMode:m1|Timer[8]      ; AutoMode:m1|FullBeats     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.641      ;
+; 4.420 ; AutoMode:m1|Timer[13]     ; AutoMode:m1|Timer[16]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.641      ;
+; 4.464 ; AutoMode:m1|Timer[10]     ; AutoMode:m1|Timer[11]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.685      ;
+; 4.565 ; AutoMode:m1|Timer[8]      ; AutoMode:m1|Timer[16]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.786      ;
+; 4.575 ; AutoMode:m1|Timer[5]      ; AutoMode:m1|Timer[0]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.796      ;
+; 4.576 ; AutoMode:m1|Timer[5]      ; AutoMode:m1|Timer[4]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.797      ;
+; 4.579 ; AutoMode:m1|Timer[5]      ; AutoMode:m1|Timer[7]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.800      ;
+; 4.600 ; AutoMode:m1|Timer[18]     ; AutoMode:m1|Timer[0]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.821      ;
+; 4.601 ; AutoMode:m1|Timer[18]     ; AutoMode:m1|Timer[4]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.822      ;
+; 4.604 ; AutoMode:m1|Timer[18]     ; AutoMode:m1|Timer[7]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.825      ;
+; 4.664 ; AutoMode:m1|Timer[18]     ; AutoMode:m1|Timer[19]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.885      ;
+; 4.678 ; AutoMode:m1|Timer[6]      ; AutoMode:m1|Timer[9]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.899      ;
+; 4.688 ; AutoMode:m1|Timer[11]     ; AutoMode:m1|Timer[12]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.909      ;
+; 4.710 ; AutoMode:m1|Timer[15]     ; AutoMode:m1|Timer[12]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.931      ;
+; 4.711 ; AutoMode:m1|Timer[15]     ; AutoMode:m1|Timer[17]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.932      ;
+; 4.712 ; AutoMode:m1|Timer[15]     ; AutoMode:m1|Timer[14]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.933      ;
+; 4.757 ; AutoMode:m1|Timer[17]     ; AutoMode:m1|Timer[19]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.978      ;
+; 4.777 ; AutoMode:m1|Timer[15]     ; AutoMode:m1|FullBeats     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.998      ;
+; 4.779 ; AutoMode:m1|Timer[15]     ; AutoMode:m1|Timer[19]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.000      ;
+; 4.821 ; AutoMode:m1|Timer[10]     ; AutoMode:m1|Timer[12]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.042      ;
+; 4.834 ; Beeper:m4|Counter[1]      ; Beeper:m4|Counter[0]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.055      ;
+; 4.835 ; Beeper:m4|Counter[1]      ; Beeper:m4|Beep            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.056      ;
+; 4.844 ; AutoMode:m1|Timer[14]     ; AutoMode:m1|Timer[19]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.065      ;
+; 4.871 ; AutoMode:m1|Timer[13]     ; AutoMode:m1|Timer[19]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.092      ;
+; 4.880 ; AutoMode:m1|Timer[5]      ; AutoMode:m1|Timer[15]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.101      ;
+; 4.883 ; AutoMode:m1|Timer[5]      ; AutoMode:m1|Timer[12]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.104      ;
+; 4.884 ; AutoMode:m1|Timer[5]      ; AutoMode:m1|Timer[17]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.105      ;
+; 4.885 ; AutoMode:m1|Timer[5]      ; AutoMode:m1|Timer[14]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.106      ;
+; 4.900 ; AutoMode:m1|Timer[16]     ; AutoMode:m1|Timer[19]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.121      ;
+; 4.903 ; AutoMode:m1|Timer[11]     ; AutoMode:m1|Timer[14]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.124      ;
+; 4.905 ; AutoMode:m1|Timer[18]     ; AutoMode:m1|Timer[15]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.126      ;
+; 4.908 ; AutoMode:m1|Timer[18]     ; AutoMode:m1|Timer[12]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.129      ;
+; 4.909 ; AutoMode:m1|Timer[18]     ; AutoMode:m1|Timer[17]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.130      ;
+; 4.910 ; AutoMode:m1|Timer[18]     ; AutoMode:m1|Timer[14]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.131      ;
+; 4.922 ; AutoMode:m1|Timer[15]     ; AutoMode:m1|Timer[16]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.143      ;
+; 4.932 ; AutoMode:m1|Timer[16]     ; AutoMode:m1|Timer[17]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.153      ;
+; 4.949 ; AutoMode:m1|Timer[5]      ; AutoMode:m1|Timer[5]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.170      ;
+; 4.950 ; AutoMode:m1|Timer[5]      ; AutoMode:m1|FullBeats     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.171      ;
+; 4.962 ; AutoMode:m1|Timer[2]      ; AutoMode:m1|Timer[2]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.183      ;
+; 4.962 ; AutoMode:m1|Timer[12]     ; AutoMode:m1|Timer[0]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.183      ;
+; 4.963 ; AutoMode:m1|Timer[12]     ; AutoMode:m1|Timer[4]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.184      ;
+; 4.966 ; AutoMode:m1|Timer[12]     ; AutoMode:m1|Timer[7]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.187      ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                           ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+; From Clock            ; To Clock              ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 0        ; 0        ; 3        ; 9        ;
+; AutoMode:m1|FullBeats ; CLK                   ; 0        ; 3590     ; 0        ; 0        ;
+; CLK                   ; CLK                   ; 587      ; 0        ; 0        ; 0        ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                            ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+; From Clock            ; To Clock              ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; 0        ; 0        ; 3        ; 9        ;
+; AutoMode:m1|FullBeats ; CLK                   ; 0        ; 3590     ; 0        ; 0        ;
+; CLK                   ; CLK                   ; 587      ; 0        ; 0        ; 0        ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 11    ; 11   ;
+; Unconstrained Input Port Paths  ; 286   ; 286  ;
+; Unconstrained Output Ports      ; 30    ; 30   ;
+; Unconstrained Output Port Paths ; 353   ; 353  ;
++---------------------------------+-------+------+
+
+
++--------------------------------------------------------------------+
+; Clock Status Summary                                               ;
++-----------------------+-----------------------+------+-------------+
+; Target                ; Clock                 ; Type ; Status      ;
++-----------------------+-----------------------+------+-------------+
+; AutoMode:m1|FullBeats ; AutoMode:m1|FullBeats ; Base ; Constrained ;
+; CLK                   ; CLK                   ; Base ; Constrained ;
++-----------------------+-----------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; Key[0]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Key[1]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Key[2]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Key[3]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Key[4]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Key[5]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Key[6]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Switch[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Switch[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Switch[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Switch[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                           ;
++--------------+---------------------------------------------------------------------------------------+
+; Output Port  ; Comment                                                                               ;
++--------------+---------------------------------------------------------------------------------------+
+; Beep         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_GREEN[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_GREEN[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_GREEN[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_GREEN[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_GREEN[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_GREEN[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_GREEN[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_RED[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_RED[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_RED[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_RED[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_RED[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_RED[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_RED[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ROW[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ROW[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ROW[2]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ROW[3]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ROW[4]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ROW[5]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ROW[6]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ROW[7]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG[2]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG[3]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG[4]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG[5]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG[6]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++--------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; Key[0]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Key[1]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Key[2]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Key[3]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Key[4]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Key[5]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Key[6]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Switch[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Switch[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Switch[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Switch[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                           ;
++--------------+---------------------------------------------------------------------------------------+
+; Output Port  ; Comment                                                                               ;
++--------------+---------------------------------------------------------------------------------------+
+; Beep         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_GREEN[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_GREEN[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_GREEN[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_GREEN[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_GREEN[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_GREEN[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_GREEN[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_RED[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_RED[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_RED[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_RED[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_RED[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_RED[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COL_RED[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ROW[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ROW[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ROW[2]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ROW[3]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ROW[4]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ROW[5]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ROW[6]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ROW[7]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG[2]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG[3]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG[4]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG[5]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG[6]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++--------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Sun Nov 22 22:51:03 2020
+Info: Command: quartus_sta ARKLED_Switch_Keys -c ARKLED_Switch_Keys
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Warning (335093): The Timing Analyzer is analyzing 3 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'ARKLED_Switch_Keys.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLK CLK
+    Info (332105): create_clock -period 1.000 -name AutoMode:m1|FullBeats AutoMode:m1|FullBeats
+Warning (332125): Found combinational loop of 2 nodes File: D:/QuartusProjects/Experimen2/ARKLED_2020.11.17.v Line: 539
+    Warning (332126): Node "m1|FullBeats|combout"
+    Warning (332126): Node "m1|FullBeats|datad"
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -17.418
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -17.418            -221.345 CLK 
+    Info (332119):    -4.193             -11.645 AutoMode:m1|FullBeats 
+Info (332146): Worst-case hold slack is -2.505
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.505              -6.987 AutoMode:m1|FullBeats 
+    Info (332119):     1.732               0.000 CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 CLK 
+    Info (332119):     0.500               0.000 AutoMode:m1|FullBeats 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4709 megabytes
+    Info: Processing ended: Sun Nov 22 22:51:05 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

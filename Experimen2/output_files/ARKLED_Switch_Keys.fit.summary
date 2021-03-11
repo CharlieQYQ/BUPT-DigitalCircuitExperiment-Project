@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sun Nov 22 22:51:00 2020
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : ARKLED_Switch_Keys
+Top-level Entity Name : ARKLED_Switch_Keys
+Family : MAX II
+Device : EPM1270T144C5
+Timing Models : Final
+Total logic elements : 185 / 1,270 ( 15 % )
+Total pins : 52 / 116 ( 45 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

@@ -1,0 +1,44 @@
+# Reading pref.tcl
+# ERROR: No extended dataflow license exists
+# do Piano_run_msim_gate_verilog.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work gate_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+. {Piano.vo}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:38:11 on Nov 16,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+." Piano.vo 
+# -- Compiling module ARKLED
+# -- Compiling module hard_block
+# 
+# Top level modules:
+# 	ARKLED
+# End time: 17:38:11 on Nov 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/QuartusProjects/Experiment {D:/QuartusProjects/Experiment/ARKLED_TestBench.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:38:12 on Nov 16,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/QuartusProjects/Experiment" D:/QuartusProjects/Experiment/ARKLED_TestBench.v 
+# -- Compiling module ARKLED_TestBench
+# 
+# Top level modules:
+# 	ARKLED_TestBench
+# End time: 17:38:12 on Nov 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L gate_work -L work -voptargs="+acc"  ARKLED_TestBench
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all

@@ -1,0 +1,4 @@
+set tool_name "ModelSim-Altera (Verilog)"
+set corner_file_list {
+    {{"Slow Model"} {ARKLED_Switch_Keys.vo ARKLED_Switch_Keys_v.sdo}}
+}

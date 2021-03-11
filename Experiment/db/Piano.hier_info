@@ -1,0 +1,71 @@
+|ARKLED
+ROW[0] << ARKPrinter:m3.port0
+ROW[1] << ARKPrinter:m3.port0
+ROW[2] << ARKPrinter:m3.port0
+ROW[3] << ARKPrinter:m3.port0
+ROW[4] << ARKPrinter:m3.port0
+ROW[5] << ARKPrinter:m3.port0
+ROW[6] << ARKPrinter:m3.port0
+ROW[7] << ARKPrinter:m3.port0
+COL_RED[0] << ARKPrinter:m3.port1
+COL_RED[1] << ARKPrinter:m3.port1
+COL_RED[2] << ARKPrinter:m3.port1
+COL_RED[3] << ARKPrinter:m3.port1
+COL_RED[4] << ARKPrinter:m3.port1
+COL_RED[5] << ARKPrinter:m3.port1
+COL_RED[6] << ARKPrinter:m3.port1
+COL_RED[7] << ARKPrinter:m3.port1
+COL_GREEN[0] << ARKPrinter:m3.port2
+COL_GREEN[1] << ARKPrinter:m3.port2
+COL_GREEN[2] << ARKPrinter:m3.port2
+COL_GREEN[3] << ARKPrinter:m3.port2
+COL_GREEN[4] << ARKPrinter:m3.port2
+COL_GREEN[5] << ARKPrinter:m3.port2
+COL_GREEN[6] << ARKPrinter:m3.port2
+COL_GREEN[7] << ARKPrinter:m3.port2
+CLK => CLK.IN1
+
+
+|ARKLED|Mod8Counter:m2
+Counter[0] <= Counter[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Counter[1] <= Counter[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Counter[2] <= Counter[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => Counter[0]~reg0.CLK
+CLK => Counter[1]~reg0.CLK
+CLK => Counter[2]~reg0.CLK
+
+
+|ARKLED|ARKPrinter:m3
+ROW[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ROW[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ROW[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ROW[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ROW[4] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ROW[5] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ROW[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ROW[7] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+COL_RED[0] <= <GND>
+COL_RED[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+COL_RED[2] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+COL_RED[3] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+COL_RED[4] <= Counter[2].DB_MAX_OUTPUT_PORT_TYPE
+COL_RED[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+COL_RED[6] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+COL_RED[7] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+COL_GREEN[0] <= <GND>
+COL_GREEN[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+COL_GREEN[2] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+COL_GREEN[3] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+COL_GREEN[4] <= Counter[2].DB_MAX_OUTPUT_PORT_TYPE
+COL_GREEN[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+COL_GREEN[6] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+COL_GREEN[7] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Counter[0] => Decoder0.IN2
+Counter[1] => Decoder0.IN1
+Counter[1] => Decoder1.IN1
+Counter[2] => Decoder0.IN0
+Counter[2] => Decoder1.IN0
+Counter[2] => COL_RED[4].DATAIN
+Counter[2] => COL_GREEN[4].DATAIN
+
+

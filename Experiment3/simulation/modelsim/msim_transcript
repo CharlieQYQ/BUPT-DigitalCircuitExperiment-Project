@@ -1,0 +1,44 @@
+# Reading pref.tcl
+# ERROR: No extended dataflow license exists
+# do Piano_run_msim_gate_verilog.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work gate_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+. {Piano.vo}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:29:46 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+." Piano.vo 
+# -- Compiling module Piano
+# 
+# Top level modules:
+# 	Piano
+# End time: 13:29:46 on Dec 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/QuartusProjects/Experiment3 {D:/QuartusProjects/Experiment3/Testbench_Piano.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:29:46 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/QuartusProjects/Experiment3" D:/QuartusProjects/Experiment3/Testbench_Piano.v 
+# -- Compiling module PianoTest
+# 
+# Top level modules:
+# 	PianoTest
+# End time: 13:29:46 on Dec 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L maxii_ver -L gate_work -L work -voptargs="+acc"  PianoTest
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break in Module PianoTest at D:/QuartusProjects/Experiment3/Testbench_Piano.v line 129

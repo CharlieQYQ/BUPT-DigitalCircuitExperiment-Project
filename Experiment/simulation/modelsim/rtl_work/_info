@@ -1,0 +1,111 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/QuartusProjects/Experiment/simulation/modelsim
+vARKLED
+Z1 !s110 1605454662
+!i10b 1
+!s100 DF8V>N8d^69:S;AALTIfT1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Io@oLiI_A3>6l;jQC4ODRb3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1605453758
+Z5 8D:/QuartusProjects/Experiment/ARKLED_2020.11.15.v
+Z6 FD:/QuartusProjects/Experiment/ARKLED_2020.11.15.v
+!i122 0
+L0 4 16
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1605454662.000000
+Z9 !s107 D:/QuartusProjects/Experiment/ARKLED_2020.11.15.v|
+Z10 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/QuartusProjects/Experiment|D:/QuartusProjects/Experiment/ARKLED_2020.11.15.v|
+!i113 1
+Z11 o-vlog01compat -work work
+Z12 !s92 -vlog01compat -work work +incdir+D:/QuartusProjects/Experiment
+Z13 tCvgOpt 0
+n@a@r@k@l@e@d
+vARKLED_TestBench
+R1
+!i10b 1
+!s100 A^61>LH>GX42TPXkRHzH12
+R2
+IiR^X40J9i^eXPj6z:iIMm1
+R3
+R0
+w1605454625
+8D:/QuartusProjects/Experiment/ARKLED_TestBench.v
+FD:/QuartusProjects/Experiment/ARKLED_TestBench.v
+!i122 1
+L0 3 24
+R7
+r1
+!s85 0
+31
+R8
+!s107 D:/QuartusProjects/Experiment/ARKLED_TestBench.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/QuartusProjects/Experiment|D:/QuartusProjects/Experiment/ARKLED_TestBench.v|
+!i113 1
+R11
+R12
+R13
+n@a@r@k@l@e@d_@test@bench
+vARKPrinter
+R1
+!i10b 1
+!s100 ?i6aa>;lZe0YO81M_FXG@2
+R2
+I8;R[E0amLiB@91F`oClTE2
+R3
+R0
+R4
+R5
+R6
+!i122 0
+L0 88 76
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@a@r@k@printer
+vMod8Counter
+R1
+!i10b 1
+!s100 oa@:_I[RkLY@G[50;bZ5m2
+R2
+I3YU6bGhgfU:o9CD>TVJMB0
+R3
+R0
+R4
+R5
+R6
+!i122 0
+L0 71 15
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@mod8@counter

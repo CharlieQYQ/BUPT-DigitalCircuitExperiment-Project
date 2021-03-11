@@ -1,0 +1,101 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ROW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ROW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ROW[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ROW[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ROW[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ROW[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ROW[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ROW[7]",
+					"strict" : false
+				},
+				{
+					"name" : "COL_RED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "COL_RED[2]",
+					"strict" : false
+				},
+				{
+					"name" : "COL_RED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "COL_RED[4]",
+					"strict" : false
+				},
+				{
+					"name" : "COL_RED[5]",
+					"strict" : false
+				},
+				{
+					"name" : "COL_RED[6]",
+					"strict" : false
+				},
+				{
+					"name" : "COL_RED[7]",
+					"strict" : false
+				},
+				{
+					"name" : "COL_GREEN[1]",
+					"strict" : false
+				},
+				{
+					"name" : "COL_GREEN[2]",
+					"strict" : false
+				},
+				{
+					"name" : "COL_GREEN[3]",
+					"strict" : false
+				},
+				{
+					"name" : "COL_GREEN[4]",
+					"strict" : false
+				},
+				{
+					"name" : "COL_GREEN[5]",
+					"strict" : false
+				},
+				{
+					"name" : "COL_GREEN[6]",
+					"strict" : false
+				},
+				{
+					"name" : "COL_GREEN[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

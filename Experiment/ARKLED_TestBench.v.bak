@@ -1,0 +1,25 @@
+`timescale 1ns/1ns
+
+module ARKLED_TB;
+	
+	reg CLK;
+	
+	wire [7:0] ROW;
+	wire [7:0] COL_RED;
+	wire [7:0] COL_GREEN;
+	
+	ARKLED u1(
+		.ROW(ROW),
+		.COL_RED(COL_RED),
+		.COL_GREEN(COL_GREEN),
+		.CLK(CLK)
+		);
+
+	parameter ClockPeriod = 10 ;
+ 
+	initial begin
+		CLK =0 ;
+		always #(ClockPeriod/2) CLK = ~CLK ;
+	end
+	
+endmodule
